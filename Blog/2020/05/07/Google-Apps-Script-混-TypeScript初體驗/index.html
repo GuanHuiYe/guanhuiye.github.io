@@ -20,15 +20,23 @@
     var CONFIG = {"hostname":"guanhuiye.github.io","root":"/Blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="IRonX 筆記">
-<meta property="og:url" content="https://guanhuiye.github.io/Blog/tags/Vim/index.html">
+  <meta name="description" content="最近無聊閒閒沒事幹!終於找到新的東西可以玩了~那就是 Google Apps Script 這東西真的很酷!如果大家不想買 IP 但又想要玩 WebAPI 怎麼辦?這時候就可以用上了   創建專案這個Google Script創專案非常簡單就是直接去 雲端硬碟 -&gt; 新增 -&gt; 更多 -&gt; Google Apps Script點擊後就能輕鬆創建拉~雖然看到檔案副檔名為 *.gs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Apps Script 混 TypeScript初體驗">
+<meta property="og:url" content="https://guanhuiye.github.io/Blog/2020/05/07/Google-Apps-Script-%E6%B7%B7-TypeScript%E5%88%9D%E9%AB%94%E9%A9%97/index.html">
 <meta property="og:site_name" content="IRonX 筆記">
+<meta property="og:description" content="最近無聊閒閒沒事幹!終於找到新的東西可以玩了~那就是 Google Apps Script 這東西真的很酷!如果大家不想買 IP 但又想要玩 WebAPI 怎麼辦?這時候就可以用上了   創建專案這個Google Script創專案非常簡單就是直接去 雲端硬碟 -&gt; 新增 -&gt; 更多 -&gt; Google Apps Script點擊後就能輕鬆創建拉~雖然看到檔案副檔名為 *.gs">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-05-07T15:11:10.000Z">
+<meta property="article:modified_time" content="2020-05-07T15:31:40.000Z">
 <meta property="article:author" content="Guan Hui Ye">
+<meta property="article:tag" content="Google">
+<meta property="article:tag" content="GoogleAppsScript">
+<meta property="article:tag" content="TypeScript">
+<meta property="article:tag" content="Clasp">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://guanhuiye.github.io/Blog/tags/Vim/">
+<link rel="canonical" href="https://guanhuiye.github.io/Blog/2020/05/07/Google-Apps-Script-%E6%B7%B7-TypeScript%E5%88%9D%E9%AB%94%E9%A9%97/">
 
 
 <script id="page-configurations">
@@ -36,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>標籤: Vim | IRonX 筆記</title>
+  <title>Google Apps Script 混 TypeScript初體驗 | IRonX 筆記</title>
   
 
 
@@ -154,51 +162,91 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Vim
-          <small>標籤</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://guanhuiye.github.io/Blog/2020/05/07/Google-Apps-Script-%E6%B7%B7-TypeScript%E5%88%9D%E9%AB%94%E9%A9%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Guan Hui Ye">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IRonX 筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Google Apps Script 混 TypeScript初體驗
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-05-07 23:11:10 / 修改時間：23:31:40" itemprop="dateCreated datePublished" datetime="2020-05-07T23:11:10+08:00">2020-05-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p>最近無聊閒閒沒事幹!終於找到新的東西可以玩了~<br>那就是 <code>Google Apps Script</code> 這東西真的很酷!<br>如果大家不想買 IP 但又想要玩 WebAPI 怎麼辦?<br>這時候就可以用上了  </p>
+<h1 id="創建專案"><a href="#創建專案" class="headerlink" title="創建專案"></a>創建專案</h1><p>這個Google Script創專案非常簡單<br>就是直接去 <code>雲端硬碟 -&gt; 新增 -&gt; 更多 -&gt; Google Apps Script</code><br>點擊後就能輕鬆創建拉~<br>雖然看到檔案副檔名為 *.gs 但是語言是用 JavaScript 喔! ((學前端的福音~  </p>
+<a id="more"></a>
+
+<h1 id="安裝-Clasp"><a href="#安裝-Clasp" class="headerlink" title="安裝 Clasp"></a>安裝 Clasp</h1><p>會寫的人可能開始利用雲端硬碟開始寫了<br>但是!!!但是!!!!有個很嚴重的問題<br>那就是那個網頁很難寫Code!<br>那怎麼辦呢?這時!!!Google官方出了個 <code>Clasp</code> 這個好東西!<br>能讓使用者在自己習慣的 IDE 寫程式，但是無法在自己電腦DEMO執行<br>但是已經讓使用者很方便了!<br>那麼廢話不多說<del>開始安裝ㄅ</del>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install @google&#x2F;clasp -g</span><br></pre></td></tr></table></figure>
+<p>這樣就安裝好了 ((就這樣…<br>在你開始想要開始寫的時候!!!<br>首先你要登入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ clasp login</span><br></pre></td></tr></table></figure>
+<p>這時會彈出Google的登入視窗，登入就對了<br>這樣你以為就可以開始寫了嗎?不!!!!<br>你必須到 <a href="https://script.google.com/home/usersettings" target="_blank" rel="noopener">https://script.google.com/home/usersettings</a> 這個網站<br>將 <code>Google Apps Script API</code> 打開，不然你就不能做很多事情</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-17T17:33:27+08:00"
-              content="2020-02-17">
-          02-17
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/Blog/tags/Google/" rel="tag"># Google</a>
+              <a href="/Blog/tags/GoogleAppsScript/" rel="tag"># GoogleAppsScript</a>
+              <a href="/Blog/tags/TypeScript/" rel="tag"># TypeScript</a>
+              <a href="/Blog/tags/Clasp/" rel="tag"># Clasp</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/Blog/2020/02/17/VIM-%E6%93%8D%E4%BD%9C/" itemprop="url">
-            <span itemprop="name">VIM 操作</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Blog/2020/02/17/VIM-%E6%93%8D%E4%BD%9C/" rel="prev" title="VIM 操作">
+      <i class="fa fa-chevron-left"></i> VIM 操作
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -251,6 +299,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#創建專案"><span class="nav-number">1.</span> <span class="nav-text">創建專案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-Clasp"><span class="nav-number">2.</span> <span class="nav-text">安裝 Clasp</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

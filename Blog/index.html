@@ -13,11 +13,11 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"guanhuiye.github.io","root":"/Blog/","scheme":"Mist","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"guanhuiye.github.io","root":"/Blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta property="og:type" content="website">
@@ -35,8 +35,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -89,50 +90,55 @@
 
   <div class="site-meta">
 
-    <div>
-      <a href="/Blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">IRonX 筆記</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IRonX 筆記</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/Blog/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/Blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>關於</a>
+    <a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>標籤</a>
+    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分類</a>
+    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
     </header>
 
@@ -148,14 +154,79 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://guanhuiye.github.io/Blog/2020/05/07/Google-Apps-Script-%E6%B7%B7-TypeScript%E5%88%9D%E9%AB%94%E9%A9%97/">
 
-  <div class="posts-expand">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Guan Hui Ye">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IRonX 筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/2020/05/07/Google-Apps-Script-%E6%B7%B7-TypeScript%E5%88%9D%E9%AB%94%E9%A9%97/" class="post-title-link" itemprop="url">Google Apps Script 混 TypeScript初體驗</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-05-07 23:11:10 / 修改時間：23:31:40" itemprop="dateCreated datePublished" datetime="2020-05-07T23:11:10+08:00">2020-05-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近無聊閒閒沒事幹!終於找到新的東西可以玩了~<br>那就是 <code>Google Apps Script</code> 這東西真的很酷!<br>如果大家不想買 IP 但又想要玩 WebAPI 怎麼辦?<br>這時候就可以用上了  </p>
+<h1 id="創建專案"><a href="#創建專案" class="headerlink" title="創建專案"></a>創建專案</h1><p>這個Google Script創專案非常簡單<br>就是直接去 <code>雲端硬碟 -&gt; 新增 -&gt; 更多 -&gt; Google Apps Script</code><br>點擊後就能輕鬆創建拉~<br>雖然看到檔案副檔名為 *.gs 但是語言是用 JavaScript 喔! ((學前端的福音~  </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2020/05/07/Google-Apps-Script-%E6%B7%B7-TypeScript%E5%88%9D%E9%AB%94%E9%A9%97/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://guanhuiye.github.io/Blog/2020/02/17/VIM-%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -168,21 +239,27 @@
       <meta itemprop="name" content="IRonX 筆記">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/Blog/2020/02/17/VIM-%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">VIM 操作</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-02-17 17:33:27 / 修改時間：21:54:52" itemprop="dateCreated datePublished" datetime="2020-02-17T17:33:27+08:00">2020-02-17</time>
+              <time title="創建時間：2020-02-17 17:33:27" itemprop="dateCreated datePublished" datetime="2020-02-17T17:33:27+08:00">2020-02-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-05-07 22:55:32" itemprop="dateModified" datetime="2020-05-07T22:55:32+08:00">2020-05-07</time>
+              </span>
 
           
 
@@ -220,10 +297,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://guanhuiye.github.io/Blog/2020/02/17/Git-%E6%8C%87%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -236,21 +313,27 @@
       <meta itemprop="name" content="IRonX 筆記">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/Blog/2020/02/17/Git-%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">Git 指令</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-02-17 17:32:10 / 修改時間：21:49:39" itemprop="dateCreated datePublished" datetime="2020-02-17T17:32:10+08:00">2020-02-17</time>
+              <time title="創建時間：2020-02-17 17:32:10" itemprop="dateCreated datePublished" datetime="2020-02-17T17:32:10+08:00">2020-02-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-05-07 22:55:12" itemprop="dateModified" datetime="2020-05-07T22:55:12+08:00">2020-05-07</time>
+              </span>
 
           
 
@@ -313,11 +396,11 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://guanhuiye.github.io/Blog/2020/02/17/HEXO%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://guanhuiye.github.io/Blog/2020/02/17/HEXT%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/avatar.gif">
@@ -329,21 +412,27 @@
       <meta itemprop="name" content="IRonX 筆記">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Blog/2020/02/17/HEXO%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/" class="post-title-link" itemprop="url">HEXO & NEXT 開始筆記人生</a>
-        </h1>
+            <a href="/Blog/2020/02/17/HEXT%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/" class="post-title-link" itemprop="url">HEXT & NEXT 開始筆記人生</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-02-17 17:01:43 / 修改時間：21:50:53" itemprop="dateCreated datePublished" datetime="2020-02-17T17:01:43+08:00">2020-02-17</time>
+              <time title="創建時間：2020-02-17 17:01:43" itemprop="dateCreated datePublished" datetime="2020-02-17T17:01:43+08:00">2020-02-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-05-07 23:02:18" itemprop="dateModified" datetime="2020-05-07T23:02:18+08:00">2020-05-07</time>
+              </span>
 
           
 
@@ -359,7 +448,7 @@
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我其實沒有想過要開始玩這個的<br>只是在玩各種東西後發現如果不寫個 Blog 很快就會忘記很多東西 XXD<br>選用 HEXO 沒什麼原因<br>就因為他有中文說明書當然 NEXT 也一樣<br>其實有看上其他的主題拉<br>只是不知道為啥建不起來<br>就放棄拉~</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/Blog/2020/02/17/HEXO%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/#more" rel="contents">
+              <a class="btn" href="/Blog/2020/02/17/HEXT%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -379,7 +468,6 @@
   
   
 
-  </div>
 
   
 
@@ -390,7 +478,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -446,14 +534,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -475,19 +563,18 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Guan Hui Ye</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主題 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.1
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
   </div>
 
         
