@@ -13,11 +13,11 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"guanhuiye.github.io","root":"/Blog/","scheme":"Mist","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"guanhuiye.github.io","root":"/Blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="前言我其實沒有想過要開始玩這個的只是在玩各種東西後發現如果不寫個 Blog 很快就會忘記很多東西 XXD選用 HEXO 沒什麼原因就因為他有中文說明書當然 NEXT 也一樣其實有看上其他的主題拉只是不知道為啥建不起來就放棄拉~">
@@ -28,11 +28,11 @@
 <meta property="og:description" content="前言我其實沒有想過要開始玩這個的只是在玩各種東西後發現如果不寫個 Blog 很快就會忘記很多東西 XXD選用 HEXO 沒什麼原因就因為他有中文說明書當然 NEXT 也一樣其實有看上其他的主題拉只是不知道為啥建不起來就放棄拉~">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-02-17T09:01:43.000Z">
-<meta property="article:modified_time" content="2020-02-17T13:50:53.195Z">
+<meta property="article:modified_time" content="2020-08-06T06:25:17.447Z">
 <meta property="article:author" content="Guan Hui Ye">
-<meta property="article:tag" content="HTML">
 <meta property="article:tag" content="HEXO">
-<meta property="article:tag" content="NEXT">
+<meta property="article:tag" content="NexT">
+<meta property="article:tag" content="MarkDown">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://guanhuiye.github.io/Blog/2020/02/17/HEXO%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/">
@@ -42,8 +42,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -96,50 +97,55 @@
 
   <div class="site-meta">
 
-    <div>
-      <a href="/Blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">IRonX 筆記</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IRonX 筆記</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/Blog/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/Blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>關於</a>
+    <a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>標籤</a>
+    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分類</a>
+    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
     </header>
 
@@ -155,14 +161,13 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content post posts-expand">
             
 
-  <div class="posts-expand">
-      
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://guanhuiye.github.io/Blog/2020/02/17/HEXO%20&%20NEXT%20%E9%96%8B%E5%A7%8B%E7%AD%86%E8%A8%98%E4%BA%BA%E7%94%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -182,13 +187,19 @@
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-02-17 17:01:43 / 修改時間：21:50:53" itemprop="dateCreated datePublished" datetime="2020-02-17T17:01:43+08:00">2020-02-17</time>
+              <time title="創建時間：2020-02-17 17:01:43" itemprop="dateCreated datePublished" datetime="2020-02-17T17:01:43+08:00">2020-02-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-08-06 14:25:17" itemprop="dateModified" datetime="2020-08-06T14:25:17+08:00">2020-08-06</time>
+              </span>
 
           
 
@@ -204,25 +215,40 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我其實沒有想過要開始玩這個的<br>只是在玩各種東西後發現如果不寫個 Blog 很快就會忘記很多東西 XXD<br>選用 HEXO 沒什麼原因<br>就因為他有中文說明書當然 NEXT 也一樣<br>其實有看上其他的主題拉<br>只是不知道為啥建不起來<br>就放棄拉~</p>
 <a id="more"></a>
 
-<h1 id="安裝-amp-建立-HEXO-網站"><a href="#安裝-amp-建立-HEXO-網站" class="headerlink" title="安裝 &amp; 建立 HEXO 網站"></a>安裝 &amp; 建立 HEXO 網站</h1><h2 id="安裝-NVM"><a href="#安裝-NVM" class="headerlink" title="安裝 NVM"></a>安裝 NVM</h2><p>HEXO 使用大家最常用的 NPM (裝 Node.js 就有附贈了) 進行安裝<br>個人比較推薦裝個 NVM 來進行 Node.js 版控<br>用 Windows 的推薦裝個 WSL 很好用~<br>所以就直接下 command 吧</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.2&#x2F;install.sh | bash</span><br></pre></td></tr></table></figure>
-<p>裝完 NVM 後再來安裝我們的 Node.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 建議裝 LTS 版本 有長期支援，到 Node.JS 官網可以查看最新的版本(這裡是裝 12.16.0)</span><br><span class="line">nvm install 12.16.0</span><br><span class="line">nvm use 12.16.0</span><br></pre></td></tr></table></figure>
-<h2 id="安裝-HEXO"><a href="#安裝-HEXO" class="headerlink" title="安裝 HEXO"></a>安裝 HEXO</h2><p>裝好了 Node.JS 後終於來到了本體 HEXO<br>直接來下指令安裝~</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h1 id="安裝-amp-建立-HEXO-網站"><a href="#安裝-amp-建立-HEXO-網站" class="headerlink" title="安裝 &amp; 建立 HEXO 網站"></a>安裝 &amp; 建立 HEXO 網站</h1><p>HEXO 使用大家最常用的 NPM (裝 Node.js 就有附贈了) 進行安裝<br>個人比較推薦裝個 NVM 來進行 Node.js 版控<br>所以就直接下 command 吧</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <p>裝完之後找個自己順眼的資料夾下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;Project Name&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;Project Name&gt;</span><br></pre></td></tr></table></figure>
 
 <p>就可以看到多了個 <code>&lt;Project Name&gt;</code> 的資料夾<br>再執行以下指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &lt;Project Name&gt; &#x2F;&#x2F; 移動到 &lt;Project Name&gt; 資料夾</span><br><span class="line">hexo server       &#x2F;&#x2F; 啟動 HEXO SERVER</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd &lt;Project Name&gt; &#x2F;&#x2F; 移動到 &lt;Project Name&gt; 資料夾</span><br><span class="line">$ hexo server       &#x2F;&#x2F; 啟動 HEXO SERVER</span><br></pre></td></tr></table></figure>
 
-<p>沒意外可以看到你的網站已經 綁到 localhost:4000 的位置<br>你的網站基本上就建立成功拉</p>
-<h2 id="安裝-NexT"><a href="#安裝-NexT" class="headerlink" title="安裝 NexT"></a>安裝 NexT</h2><p>NexT 滿有名的很多人都有用這個主題</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-<p>之後到 <code>_config.yml</code>將<code>theme</code>的值改成<code>next</code><br>再run一次</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>wow 介面突然上升了一個層次了呢~<br>之後詳細的設定請參考 <a href="https://hexo.io/zh-tw/docs/configuration.html" target="_blank" rel="noopener">HEXO</a> 和 <a href="https://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">NexT</a> 的官方doc來看ㄅ~</p>
+<p>沒意外可以看到你的網站已經 綁到 127.0.0.1:4000 的位置<br>你的網站基本上就建立成功拉</p>
+<h1 id="安裝-NexT-主題"><a href="#安裝-NexT-主題" class="headerlink" title="安裝 NexT 主題"></a>安裝 NexT 主題</h1><p>NexT 滿有名的很多人都有用這個主題</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+<p>之後到 /_config.yml將theme的值改成next</p>
+<p>詳細的主題設定在 /themes/_config.yml 的檔案<br><code>注意！/themes/next 裡的檔案預設沒有版控</code></p>
+<h1 id="輸出網站"><a href="#輸出網站" class="headerlink" title="輸出網站"></a>輸出網站</h1><p>你網站設定好了，寫了文章那就要把它放到網路上拉<br>但是不是將原始檔案放置在伺服器上<br>而是利用 hexo-cli 來產生靜態網站<br>產生網站的指令很簡單</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<h1 id="新增文章"><a href="#新增文章" class="headerlink" title="新增文章"></a>新增文章</h1><p>要寫Blog總要會如何寫文章八!!<br>直接看指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;文章標題&quot;</span><br></pre></td></tr></table></figure>
+
+<p>這時就會有了新的文章出現拉~<br>如果你在主題的設定有Tag的功能並且有開啟<br>那檔案最上面會長得像這樣</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: hexo</span><br><span class="line">title: （文章名稱）</span><br><span class="line">date: （文章日期）</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>如果要加入Tab在 <code>tags</code> 加入 <code>-（Tag名稱）</code>就可以了<br>範例 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: hexo</span><br><span class="line">title: （文章名稱）</span><br><span class="line">date: （文章日期）</span><br><span class="line">tags:</span><br><span class="line">- hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h1 id="設定-HEXO-網站"><a href="#設定-HEXO-網站" class="headerlink" title="設定 HEXO 網站"></a>設定 HEXO 網站</h1><p>一個HEXO（除了主題）的設定都放置在 <code>./_config.yml</code>裡面<br>介紹必較重要一點的設定</p>
+<h2 id="設定網址"><a href="#設定網址" class="headerlink" title="設定網址"></a>設定網址</h2><p>如果你的網站不是放在最上層的話 例：<a href="http://xxx.xxx.com/xxx/" target="_blank" rel="noopener">http://xxx.xxx.com/xxx/</a>…<br>那麼就要特別設定 <code>url</code> 及 <code>root</code><br>我們來看到 <code>#URL</code> 的部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;xxxx.xxx.com&#x2F;</span><br><span class="line">root: &#x2F;xxxx</span><br></pre></td></tr></table></figure>
+<p><code>url:</code>的部分很簡單就是你網站放置的網址<br>那<code>root：</code>的部分就是放置你網站起始的點<br>例：<br>我的網站是 <a href="http://www.abc.com/" target="_blank" rel="noopener">http://www.abc.com/</a><br>但我的部落格放在 <a href="http://www.abc.com/blog" target="_blank" rel="noopener">http://www.abc.com/blog</a><br>那就會長這樣</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;www.abc.com&#x2F;blog</span><br><span class="line">root: &#x2F;blog</span><br></pre></td></tr></table></figure>
+<h2 id="設定文章圖片"><a href="#設定文章圖片" class="headerlink" title="設定文章圖片"></a>設定文章圖片</h2><p>如果你的文章要用圖片，但是有不想要將照片丟在雲端<br>那麼這個設定一定能幫助到你<br>到 <code># Writing</code> 的區塊將</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: false</span><br></pre></td></tr></table></figure>
+<p>改成</p>
+<pre><code>post_asset_folder: true</code></pre><p>這樣在新增文章時會自動產生對應的資料夾，將照片放入就能夠使用圖片了喔～</p>
 
     </div>
 
@@ -232,9 +258,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/Blog/tags/HTML/" rel="tag"># HTML</a>
               <a href="/Blog/tags/HEXO/" rel="tag"># HEXO</a>
-              <a href="/Blog/tags/NEXT/" rel="tag"># NEXT</a>
+              <a href="/Blog/tags/NexT/" rel="tag"># NexT</a>
+              <a href="/Blog/tags/MarkDown/" rel="tag"># MarkDown</a>
           </div>
 
         
@@ -255,7 +281,6 @@
   
   
 
-  </div>
 
 
           </div>
@@ -263,7 +288,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -306,7 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-amp-建立-HEXO-網站"><span class="nav-number">2.</span> <span class="nav-text">安裝 &amp; 建立 HEXO 網站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-NVM"><span class="nav-number">2.1.</span> <span class="nav-text">安裝 NVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-HEXO"><span class="nav-number">2.2.</span> <span class="nav-text">安裝 HEXO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-NexT"><span class="nav-number">2.3.</span> <span class="nav-text">安裝 NexT</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-amp-建立-HEXO-網站"><span class="nav-number">2.</span> <span class="nav-text">安裝 &amp; 建立 HEXO 網站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-NexT-主題"><span class="nav-number">3.</span> <span class="nav-text">安裝 NexT 主題</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#輸出網站"><span class="nav-number">4.</span> <span class="nav-text">輸出網站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新增文章"><span class="nav-number">5.</span> <span class="nav-text">新增文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#設定-HEXO-網站"><span class="nav-number">6.</span> <span class="nav-text">設定 HEXO 網站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#設定網址"><span class="nav-number">6.1.</span> <span class="nav-text">設定網址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定文章圖片"><span class="nav-number">6.2.</span> <span class="nav-text">設定文章圖片</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -320,14 +345,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -349,19 +374,18 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Guan Hui Ye</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主題 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.1
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
   </div>
 
         
@@ -387,7 +411,7 @@
 <script src="/Blog/js/motion.js"></script>
 
 
-<script src="/Blog/js/schemes/muse.js"></script>
+<script src="/Blog/js/schemes/pisces.js"></script>
 
 
 <script src="/Blog/js/next-boot.js"></script>
