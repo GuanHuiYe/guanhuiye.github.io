@@ -210,8 +210,9 @@ $(document).ready(function () {
 
                 this.ans_month_group = []
                 this.ans_week_group = []
+                this.ans_day_group = []
                 this.ans_bones_group = []
-                this.ans_bones_group = []
+                this.count_power_crystal = 0
 
                 // console.log(value)
                 var limit_month_boss = this.optimization_list(
