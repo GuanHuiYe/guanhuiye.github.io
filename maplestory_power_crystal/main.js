@@ -21,6 +21,7 @@ $(document).ready(function () {
     const SETTING_KEY = "setting"
 
 
+
     const app = {
         delimiters: ['${', '}'],
         data() {
@@ -37,6 +38,7 @@ $(document).ready(function () {
                 ans_week_group: [],
                 ans_day_group: [],
                 ans_bones_group: [],
+                ans_other_group: [],
                 count_power_crystal: 0,
                 setting_data: [],
                 selected_setting_name: "",
@@ -56,6 +58,9 @@ $(document).ready(function () {
                 var value = this.number_difficult(newValue)
                 this.select_difficult = this.data.filter(e => e.name == this.selected_boss)[0].data.filter(
                     e => e.difficult == value)[0]
+            },
+            max_power_crystal(newValue, oldValue) {
+                this.updateAns()
             }
 
         },
@@ -194,6 +199,22 @@ $(document).ready(function () {
                 }
                 return true
             },
+            sortKillList(a, b) {
+                var a_expected = (a.money / a.player) * a.times
+                var b_expected = (b.money / b.player) * b.times
+                return b_expected - a_expected
+            },
+            updateCanKill(event) {
+                this.can_kill.forEach(item => {
+                    if (item.player > 6) {
+                        item.player = 6
+                    }
+                    if (item.player < 1) {
+                        item.player = 1
+                    }
+                })
+                this.updateAns()
+            },
             updateAns() {
                 var value = this.can_kill
 
@@ -201,6 +222,7 @@ $(document).ready(function () {
                 this.ans_week_group = []
                 this.ans_day_group = []
                 this.ans_bones_group = []
+                this.ans_other_group = []
                 this.count_power_crystal = 0
 
                 // console.log(value)
@@ -213,68 +235,80 @@ $(document).ready(function () {
 
 
                 if (limit_month_boss.length > 0) {
-                    this.ans_month_group = limit_month_boss.sort((a, b) => {
-                        var a_expected = (a.money / a.player) * a.times
-                        var b_expected = (b.money / b.player) * b.times
-                        return b_expected - a_expected
-                    })
+                    this.ans_month_group = limit_month_boss.sort(this.sortKillList)
                 }
 
                 if (limit_week_boss.length > 0) {
-                    this.ans_week_group = limit_week_boss.sort((a, b) => {
-                        var a_expected = (a.money / a.player) * a.times
-                        var b_expected = (b.money / b.player) * b.times
-                        return b_expected - a_expected
-                    })
-
+                    this.ans_week_group = limit_week_boss.sort(this.sortKillList)
                 }
 
                 if (limit_boss.length > 0) {
-                    this.ans_day_group = limit_boss.sort((a, b) => {
-                        var a_expected = (a.money / a.player) * a.times
-                        var b_expected = (b.money / b.player) * b.times
-                        return b_expected - a_expected
-                    })
+                    this.ans_day_group = limit_boss.sort(this.sortKillList)
                 }
+
                 if (limit_week_boss.length > 0) {
                     this.ans_week_group = this.optimization_list(this.ans_week_group.concat(this.ans_day_group)).slice(0, this.max_power_crystal)
+                    while (this.count_crystal(this.ans_week_group) > this.max_power_crystal) {
+                        if (this.ans_week_group[this.ans_week_group.length - 1].times > 1) {
+                            this.ans_week_group[this.ans_week_group.length - 1].times -= 1
+                        }
+                        else {
+                            this.ans_week_group.pop()
+                        }
+                    }
                 }
+
                 if (limit_month_boss.length > 0) {
                     this.ans_month_group = this.optimization_list(this.ans_month_group.concat(this.ans_week_group)).slice(0, this.max_power_crystal)
+                    while (this.count_crystal(this.ans_month_group) > this.max_power_crystal) {
+                        if (this.ans_month_group[this.ans_month_group.length - 1].times > 1) {
+                            this.ans_month_group[this.ans_month_group.length - 1].times -= 1
+                        }
+                        else {
+                            this.ans_month_group.pop()
+                        }
+                    }
                 }
 
-                var day_boss = limit_week_boss.length > 0 ? 6 : 7
                 var power_crystal = this.max_power_crystal - this.count_crystal(this.ans_week_group)
-                while (this.count_crystal(this.ans_day_group) * day_boss > power_crystal) {
-                    if (this.ans_day_group[this.ans_day_group.length - 1].times > 1) {
-                        this.ans_day_group[this.ans_day_group.length - 1].times -= 1
-                    }
-                    else {
-                        this.ans_bones_group.push(this.ans_day_group.pop())
-                    }
+                if (power_crystal == 0) {
+                    this.ans_day_group = []
                 }
-                power_crystal -= this.count_crystal(this.ans_day_group) * (day_boss - 1)
-                this.ans_bones_group = this.ans_bones_group.concat(this.ans_day_group).sort((a, b) => {
-                    var a_expected = (a.money / a.player) * a.times
-                    var b_expected = (b.money / b.player) * b.times
-                    return b_expected - a_expected
-                })
-                while (this.count_crystal(this.ans_bones_group) > power_crystal) {
-                    if (this.ans_bones_group[this.ans_bones_group.length - 1].times > 1) {
-                        this.ans_bones_group[this.ans_bones_group.length - 1].times -= 1
+                else {
+                    var day_boss = limit_week_boss.length > 0 ? 6 : 7
+                    while (this.count_crystal(this.ans_day_group) * day_boss > power_crystal) {
+                        if (this.ans_day_group[this.ans_day_group.length - 1].times > 1) {
+                            this.ans_day_group[this.ans_day_group.length - 1].times -= 1
+                        }
+                        else {
+                            this.ans_bones_group.push(this.ans_day_group.pop())
+                        }
                     }
-                    else {
-                        this.ans_bones_group.pop()
+                    power_crystal -= this.count_crystal(this.ans_day_group) * (day_boss - 1)
+                    this.ans_bones_group = this.ans_bones_group.concat(this.ans_day_group).sort(this.sortKillList)
+                    while (this.count_crystal(this.ans_bones_group) > power_crystal) {
+                        if (this.ans_bones_group[this.ans_bones_group.length - 1].times > 1) {
+                            this.ans_bones_group[this.ans_bones_group.length - 1].times -= 1
+                        }
+                        else {
+                            this.ans_bones_group.pop()
+                        }
                     }
-                }
 
-                power_crystal -= this.count_crystal(this.ans_bones_group)
+                    power_crystal -= this.count_crystal(this.ans_bones_group)
 
-                if (this.equalKillList(this.ans_day_group, this.ans_bones_group)) {
-                    this.ans_bones_group = []
+                    if (this.equalKillList(this.ans_day_group, this.ans_bones_group)) {
+                        this.ans_bones_group = []
+                    }
                 }
+                this.ans_other_group = value.filter(e => {
+                    if (this.ans_month_group.findIndex(i => e.name == i.name && e.difficult == i.difficult) >= 0) return false
+                    if (this.ans_week_group.findIndex(i => e.name == i.name && e.difficult == i.difficult) >= 0) return false
+                    if (this.ans_day_group.findIndex(i => e.name == i.name && e.difficult == i.difficult) >= 0) return false
+                    if (this.ans_bones_group.findIndex(i => e.name == i.name && e.difficult == i.difficult) >= 0) return false
+                    return true
+                }).sort(this.sortKillList)
                 this.count_power_crystal = this.max_power_crystal - power_crystal
-
             },
             resetCanKill() {
                 this.can_kill = []
@@ -282,6 +316,7 @@ $(document).ready(function () {
                 this.ans_week_group = []
                 this.ans_day_group = []
                 this.ans_bones_group = []
+                this.ans_other_group = []
                 this.count_power_crystal = 0
                 this.setDefaultValue()
             },
@@ -345,15 +380,20 @@ $(document).ready(function () {
             importSetting() {
                 try {
                     this.setting_data = JSON.parse(localStorage.getItem(SETTING_KEY)) || []
+                    this.setting_data.forEach(item => {
+                        if (item.max_power_crystal == undefined) {
+                            item.max_power_crystal = MAX_POWER_CRYSTAL
+                        }
+                    })
                 } catch (error) {
                     this.setting_data = []
                     localStorage.setItem(SETTING_KEY, JSON.stringify(this.setting_data))
                 }
             },
             loadSetting() {
-
                 this.setting = Object.assign({}, this.setting_data.filter(e => e.name == this.selected_setting_name)[0])
                 this.can_kill = []
+                this.max_power_crystal = this.setting.max_power_crystal
                 this.setting.data.forEach(item => {
                     const tmp_boss = this.data.filter(e => e.name == item.name)[0]
                     const tmp_difficult = tmp_boss.data.filter(e => e.difficult == item.difficult)[0]
@@ -368,7 +408,7 @@ $(document).ready(function () {
                 this.setDefaultValue()
             },
             saveSetting() {
-                console.log(this.setting)
+                // console.log(this.setting)
 
                 const tmp_data = []
 
@@ -382,6 +422,7 @@ $(document).ready(function () {
 
                 this.setting = {
                     'name': this.setting.name,
+                    'max_power_crystal': this.max_power_crystal,
                     'data': tmp_data
                 }
                 var filter_data = this.setting_data.filter(e => e.name == this.setting.name)
@@ -390,6 +431,7 @@ $(document).ready(function () {
                     this.setting_data.push(this.setting)
                     localStorage.setItem(SETTING_KEY, JSON.stringify(this.setting_data))
                     this.importSetting()
+                    Swal.fire('已儲存設定!', '', 'success')
                 }
                 else {
                     Swal.fire({
